@@ -11,15 +11,14 @@ import java.util.Map;
         You can return the answer in any order.*/
 public class TwoSum {
 
-        public int[] twoSum(int[] nums, int target) {
-            Map<Integer,Integer> map = new HashMap<>();
-            for(int i=0;i<nums.length;i++) {
-                if(map.containsKey((Integer)target-nums[i])) {
-                    return new int[]{map.get(target-nums[i]), i};
-                }
-                map.put(nums[i],i);
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])) {
+                return new int[]{map.get(target - nums[i]), i};
             }
-            return null;
+            map.put(nums[i], i);
         }
+        return null;
     }
 }
